@@ -21,6 +21,7 @@ body {
   width: 40px;
   display: flex;
   user-select: none;
+  cursor: pointer;
 }
 
 .blur {
@@ -43,11 +44,12 @@ body {
 
 header {
   display: flex;
+  position: absolute;
   width: 100%;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 2rem;
-  background-color: #0b1250;
+  background-color: transparent;
   color: #ffffff;
 }
 
@@ -91,12 +93,8 @@ section:nth-child(odd) {
   padding: 20px;
   color: white;
 }
-
-.image {
-  padding: 20px;
-}
-
-.image img {
+  
+.image img, .carousel img {
   max-width: 500px;
   max-height: 250px; /* Define a altura máxima */
   min-width: 500px;
@@ -132,7 +130,7 @@ section:nth-child(odd) {
   align-items: center;
   flex-direction: column;
   background-image: url(./images/pexels-ninasimek-13002747.jpg);
-  height: 92svh;
+  height: 100svh;
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -149,7 +147,7 @@ section:nth-child(odd) {
 
 .inicio h1 {
   font-size: 70px;
-  margin-top: -140px;
+  margin-top: -70px;
   background: -webkit-linear-gradient(rgb(65, 192, 231), rgb(159, 189, 218));
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -180,6 +178,53 @@ section:nth-child(odd) {
 .footer a:hover {
   text-decoration: underline;
 }
+
+/* CAROUSEL */
+
+.carousel {
+    margin: 20px;
+    position: relative;
+    max-width: 500px;
+    max-height: 250px; /* Define a altura máxima */
+    min-width: 500px;
+    min-height: 250px;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-inner img {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+
 
 /* responsivo */
 
@@ -235,6 +280,10 @@ section:nth-child(odd) {
     font-size: 30px;
   }
 
+  #mobile-header.closed{
+    background-color: transparent;
+  }
+
   #mobile-header.closed nav {
     animation: openMenu 0.5s forwards;
     display: none;
@@ -243,9 +292,10 @@ section:nth-child(odd) {
   .sections,
   .sections:nth-child(odd) {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 0 20px;
     scroll-margin-top: 70px;
+    margin-bottom: 2rem;
   }
 
   .inicio {
@@ -262,6 +312,7 @@ section:nth-child(odd) {
   }
 
   .text {
+    padding: 1rem 0;
     width: 100%;
   }
 
@@ -269,7 +320,7 @@ section:nth-child(odd) {
     width: 100%;
   }
 
-  .image img {
+  .image img, .carousel, .carousel img{
     width: 100%;
     max-width: 100%;
     min-width: 100%;
@@ -278,6 +329,9 @@ section:nth-child(odd) {
     min-height: 100%;
   }
 }
+
+
+
 
 /* ANIMAÇÃO */
 
