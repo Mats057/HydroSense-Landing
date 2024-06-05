@@ -17,6 +17,18 @@ body {
   );
 }
 
+/* SCROLL */
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #01010a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #171e5d;
+  border-radius: 20px;
+}
+
 .logo {
   width: 40px;
   display: flex;
