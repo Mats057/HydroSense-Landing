@@ -3,6 +3,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const mobileHeader = document.querySelector("#mobile-header");
   const mobileHeaderIcon = document.querySelector("#mobile-header-icon");
   const options = document.querySelectorAll(".option");
+  const logo = document.querySelector("#logo");
+
+  logo.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (confirm("Deseja mesmo sair da página?")) {
+      window.location.href = logo.href;
+    }
+  });
 
   mobileHeaderIcon.addEventListener("click", () => {
     mobileHeader.classList.toggle("closed");
@@ -65,9 +73,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
   updateCarousel();
 });
-
-let redirecionar = (link) => {
-  if (confirm("Deseja mesmo sair da página?")) {
-    window.location.href = link;
-  }
-};

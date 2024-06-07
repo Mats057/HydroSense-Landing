@@ -1,181 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HydroSense</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <meta
+      name="description"
+      content="HydroSense é um projeto desenvolvido para a Global Solution da FIAP no 1° Semestre de Engenharia de Sofware, a ideia é monitorar a temperatura e o pH do mar e compartilhar esses dados com biólogos, pesquisadores ou a quem interessar, a fim de que atitudes focadas na preservação possam ser tomadas a tempo. O projeto, inicialmente simulado no Wokwi é baseado em uma placa Arduino Uno e foi criado junto a um software em Python para facilitar o monitoramento em tempo real desses dados."
+    />
+  </head>
 
-<body>
-
+  <body>
     <!-- HEADER  -->
     <header>
-        <a onclick="redirecionar('https://github.com/Mats057/HydroSense-Landing')">
-            <img src="images/logo.png" alt="HydroSense Logo" class="logo">
-        </a>
-        <nav>
-            <ul>
-                <li><a href="#problema">Problema</a></li>
-                <li><a href="#tecnologia">Tecnologia</a></li>
-                <li><a href="#objetivos">Objetivos</a></li>
-                <li><a href="#publico">Nosso Público</a></li>
-                <li><a href="#beneficios">Benefícios</a></li>
-                <li><a href="#solucao">Solução</a></li>
-            </ul>
-        </nav>
+      <a href="https://github.com/Mats057/HydroSense-Landing" id="logo">
+        <img src="images/logo.png" alt="HydroSense Logo" class="logo" />
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#problema">Problema</a></li>
+          <li><a href="#tecnologia">Tecnologia</a></li>
+          <li><a href="#objetivos">Objetivos</a></li>
+          <li><a href="#publico">Nosso Público</a></li>
+          <li><a href="#beneficios">Benefícios</a></li>
+          <li><a href="#solucao">Solução</a></li>
+        </ul>
+      </nav>
     </header>
 
     <header id="mobile-header" class="closed">
-        <img id="mobile-header-icon" src="./images/burger-menu.svg">
-        <nav>
-            <ul>
-                <li><a class="option" href="#problema">Problema</a></li>
-                <li><a class="option" href="#tecnologia">Tecnologia</a></li>
-                <li><a class="option" href="#objetivos">Objetivos</a></li>
-                <li><a class="option" href="#publico">Nosso Público</a></li>
-                <li><a class="option" href="#beneficios">Benefícios</a></li>
-                <li><a class="option" href="#solucao">Solução</a></li>
-            </ul>
-        </nav>
+      <img id="mobile-header-icon" src="./images/burger-menu.svg" />
+      <nav>
+        <ul>
+          <li><a class="option" href="#problema">Problema</a></li>
+          <li><a class="option" href="#tecnologia">Tecnologia</a></li>
+          <li><a class="option" href="#objetivos">Objetivos</a></li>
+          <li><a class="option" href="#publico">Nosso Público</a></li>
+          <li><a class="option" href="#beneficios">Benefícios</a></li>
+          <li><a class="option" href="#solucao">Solução</a></li>
+        </ul>
+      </nav>
     </header>
 
     <!-- IMAGEM DE INICIO -->
 
     <div class="inicio">
+      <h1>HydroSense</h1>
 
-        <h1>
-            HydroSense
-        </h1>
-
-        <div class="box-inicial">
-            <p>Monitorando o presente para cuidar do futuro.</p>
-
-
-        </div>
+      <div class="box-inicial">
+        <p>Monitorando o presente para cuidar do futuro.</p>
+      </div>
     </div>
 
-
     <div class="blur"></div>
-
 
     <!--         SECTIONS           -->
 
     <!-- PROBLEMA -->
 
     <section id="problema" class="sections">
-
-        <div class="text">
-            <h2>Problema</h2>
-            <p>A saúde dos oceanos é fundamental para o equilíbrio ecológico global.
-
-                No entanto, os oceanos enfrentam uma série de desafios crescentes, muitos dos quais estão profundamente
-                ligados à atividade humana.
-            </p>
+      <div class="text">
+        <h2>Problema</h2>
+        <p>
+          A saúde dos oceanos é fundamental para o equilíbrio ecológico global.
+          No entanto, os oceanos enfrentam uma série de desafios crescentes,
+          muitos dos quais estão profundamente ligados à atividade humana.
+        </p>
+      </div>
+      <div class="carousel">
+        <div class="carousel-inner">
+          <img src="images/problema.jpeg" alt="Lixo no mar" />
+          <img
+            src="images/problema2.jpg"
+            alt="Resíduos de embalagens poluindo o mar"
+          />
+          <img
+            src="images/problema3.jpg"
+            alt="Animais marítimos sofrendo por conta da poluição"
+          />
         </div>
-        <div class="carousel">
-            <div class="carousel-inner">
-                <img src="images/problema.jpeg" alt="">
-                <img src="images/problema2.jpg" alt="">
-                <img src="images/problema3.jpg" alt="">
-            </div>
-            <button class="carousel-control prev">‹</button>
-            <button class="carousel-control next">›</button>
-        </div>
+        <button class="carousel-control prev">‹</button>
+        <button class="carousel-control next">›</button>
+      </div>
     </section>
 
     <!-- TECNOLOGIA -->
 
     <section id="tecnologia" class="sections">
-
-        <div class="text">
-            <h2>Tecnologias</h2>
-            <p>A ideia é um sistema que tem a capacidade de capturar e compartilhar informações vitais de pH e
-                temperatura em regiões onde o aumento da acidez está levando ao branqueamento e à morte dos recifes de
-                corais.</p>
-        </div>
-        <div class="image">
-            <img src="images/tecnologia.png" alt="">
-        </div>
-
+      <div class="text">
+        <h2>Tecnologias</h2>
+        <p>
+          A ideia é um sistema que tem a capacidade de capturar e compartilhar
+          informações vitais de pH e temperatura em regiões onde o aumento da
+          acidez está levando ao branqueamento e à morte dos recifes de corais.
+        </p>
+      </div>
+      <div class="image">
+        <img src="images/tecnologia.png" alt="Exemplo de sensor marítimo" />
+      </div>
     </section>
 
     <!-- OBJETIVOS -->
 
     <section id="objetivos" class="sections">
-
-        <div class="text">
-            <h2>Nossos objetivos</h2>
-            <p>Visamos não apenas coletar dados de forma eficiente, mas também fornecer informações acionáveis para a
-                tomada de decisões e ações corretivas necessárias para a preservação dos recifes de corais e a saúde dos
-                ecossistemas marinhos.
-            </p>
-        </div>
-        <div class="image">
-            <img src="images/objetivos.jpg" alt="">
-        </div>
-
+      <div class="text">
+        <h2>Nossos objetivos</h2>
+        <p>
+          Visamos não apenas coletar dados de forma eficiente, mas também
+          fornecer informações acionáveis para a tomada de decisões e ações
+          corretivas necessárias para a preservação dos recifes de corais e a
+          saúde dos ecossistemas marinhos.
+        </p>
+      </div>
+      <div class="image">
+        <img src="images/objetivos.jpg" alt="Vida marítima" />
+      </div>
     </section>
 
     <!-- PÚBLICO -->
 
     <section id="publico" class="sections">
-
-        <div class="text">
-            <h2>Público</h2>
-            <p>Ideal para biólogos marinhos, aquaristas e ambientalistas, nosso sensor de pH e temperatura da água
-                garante controle ambiental preciso.</p>
-        </div>
-        <div class="image">
-            <img src="images/publicos.jpg" alt="">
-        </div>
-
+      <div class="text">
+        <h2>Público</h2>
+        <p>
+          Ideal para biólogos marinhos, aquaristas e ambientalistas, nosso
+          sensor de pH e temperatura da água garante controle ambiental preciso.
+        </p>
+      </div>
+      <div class="image">
+        <img src="images/publicos.jpg" alt="Mergulhador dentro do mar" />
+      </div>
     </section>
 
     <!-- BENEFÍCIOS -->
 
     <section id="beneficios" class="sections">
-
-        <div class="text">
-            <h2>Benefícios</h2>
-            <p>Esse medidor ficaria localizado em pontos específicos no fundo dos oceanos perto de corais, no qual seria
-                possível o monitoramento geral do pH e da temperatura da água, em diversos locais simultaneamente,
-                facilitando o trabalho e agilizando a preservação.</p>
-        </div>
-        <div class="image">
-            <img src="images/beneficios.jpg" alt="">
-        </div>
-
+      <div class="text">
+        <h2>Benefícios</h2>
+        <p>
+          Esse medidor ficaria localizado em pontos específicos no fundo dos
+          oceanos perto de corais, no qual seria possível o monitoramento geral
+          do pH e da temperatura da água, em diversos locais simultaneamente,
+          facilitando o trabalho e agilizando a preservação.
+        </p>
+      </div>
+      <div class="image">
+        <img src="images/beneficios.jpg" alt="Recifes de corais" />
+      </div>
     </section>
 
     <!-- SOLUÇÃO -->
 
     <section id="solucao" class="sections">
-
-        <div class="text">
-            <h2>Nossa Solução</h2>
-            <p>Para contribuir na solução do problema de poluição mencionado, estamos desenvolvendo um sistema que tem a capacidade 
-                de capturar e compartilhar informações vitais de pH e temperatura em regiões onde o aumento da acidez está levando ao 
-                branqueamento e à morte dos recifes de corais.</p>
-        </div>
-        <div class="image">
-            <img src="images/solucao.png" alt="">
-        </div>
-
+      <div class="text">
+        <h2>Nossa Solução</h2>
+        <p>
+          Para contribuir na solução do problema de poluição mencionado,
+          desenvolvemos um sistema que tem a capacidade de capturar e
+          compartilhar informações vitais de pH e temperatura em tempo real de
+          regiões onde o aumento da acidez está levando ao branqueamento e à
+          morte dos recifes de corais.
+        </p>
+        <br />
+        <p>
+          Além disso, esses sistema permite que as informações coletadas sejam
+          acessadas em tempo real, com avisos de emergência e por meio de
+          gráficos para a análise facilitada desses dados.
+        </p>
+      </div>
+      <div class="image">
+        <img src="images/solucao.png" alt="Mergulhador" />
+      </div>
     </section>
 
     <!--            FOOTER            -->
 
     <div class="footer">
-        <p>&copy; 2024 HydroSense. Todos os direitos reservados.</p>
-        <p>Para saber mais do projeto, entre no <a href="https://github.com/Mats057/HydroSense-Landing" target="_blank">GitHub</a></p>
+      <p>&copy; 2024 HydroSense. Todos os direitos reservados.</p>
+      <p>
+        Para saber mais do projeto, entre no
+        <a href="https://github.com/Mats057/HydroSense" target="_blank"
+          >GitHub</a
+        >
+      </p>
     </div>
 
-
-
-
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
