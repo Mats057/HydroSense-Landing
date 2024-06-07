@@ -114,6 +114,12 @@ section:nth-child(odd) {
   width: auto;
   height: auto;
   object-fit: cover;
+  transition: all 0.3s;
+}
+
+.image img:hover, .carousel:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  transition: all 0.1s;
 }
 
 .sections {
@@ -163,6 +169,7 @@ section:nth-child(odd) {
   justify-content: center;
   align-content: center;
   flex-direction: column;
+  user-select: none;
 }
 
 .inicio h1 {
@@ -172,6 +179,7 @@ section:nth-child(odd) {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: popUp 0.3s forwards;
+  user-select: none;
 }
 
 .inicio p {
@@ -186,6 +194,7 @@ section:nth-child(odd) {
   text-align: center;
   width: 100%;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+  user-select: none;
 }
 
 .footer p {
@@ -263,6 +272,12 @@ section:nth-child(odd) {
   box-shadow: #070b30 0px 0px 10px;
   cursor: pointer;
   user-select: none;
+  transition: all 0.3s;
+}
+
+#abrirModal:hover {
+  background-color: rgb(41, 51, 148);
+  transition: all 0.3s;
 }
 
 #abrirModal img {
@@ -328,7 +343,7 @@ section:nth-child(odd) {
 }
 
 .contato-header button:hover {
-  background-color: #575fa3;
+  background-color: #3c46a1;
   transition: all 0.3s;
 }
 
@@ -380,12 +395,18 @@ section:nth-child(odd) {
   background-color: #282883;
   color: #fff;
   text-align: center;
+  cursor: pointer;
   width: 100%;
   border-radius: 14px;
   padding: 10px;
   border: 0;
   font-size: 16px;
   margin-top: 14px;
+}
+
+.form button:hover {
+  background-color: #3c46a1;
+  transition: all 0.3s;
 }
 
 .form-content.error input,

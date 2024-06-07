@@ -73,114 +73,115 @@ document.addEventListener("DOMContentLoaded", function () {
 
   updateCarousel();
 
-
   //-------CONTATO-MODAL-------//
-const modal = document.getElementById("contato");
-const abrirModalBtn = document.getElementById("abrirModal");
-const closeModalBtn = document.getElementById("fecharModal");
-const form = document.getElementById("form");
-const username = document.getElementById("username")
-const email = document.getElementById("email")
-const msgtxt = document.getElementById("msgtxt")
-let msgEnviada = false;
-const closeModal = () => {
-  modal.setAttribute("closing", "");
-  modal.addEventListener(
-    "animationend",
-    () => {
-      modal.removeAttribute("closing");
-      modal.close();
-    },
-    { once: true }
-  );
-}
+  const modal = document.getElementById("contato");
+  const menuContato = document.getElementById("menuContato");
+  const abrirModalBtn = document.getElementById("abrirModal");
+  const closeModalBtn = document.getElementById("fecharModal");
+  const form = document.getElementById("form");
+  const username = document.getElementById("username");
+  const email = document.getElementById("email");
+  const msgtxt = document.getElementById("msgtxt");
+  let msgEnviada = false;
 
-abrirModalBtn.addEventListener("click", function () {
-  modal.showModal();
-});
-
-closeModalBtn.addEventListener("click", function () {
-  closeModal();
-});
-
-
-modal.addEventListener("click", (event) => {
-  if (event.target === event.currentTarget) {
-    closeModal();
+  function openModal(e) {
+    console.log(e);
+    modal.showModal();
   }
-});
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+  const closeModal = () => {
+    modal.setAttribute("closing", "");
+    modal.addEventListener(
+      "animationend",
+      () => {
+        modal.removeAttribute("closing");
+        modal.close();
+      },
+      { once: true }
+    );
+  };
 
-  checkForm();
-})
-
-email.addEventListener("blur", () => {
-  checkInput(email);
-})
-
-username.addEventListener("blur", () => {
-  checkInput(username);
-})
-
-msgtxt.addEventListener("blur", () => {
-  checkInput(msgtxt);
-})
-
-
-function checkInput(input){
-  if(input.value === "" || input.value === null){
-    if(input.id === "username"){
-      errorInput(input, "Preencha o campo de nome!")
-    }else if(input.id === "email"){
-      errorInput(email, "O email é obrigatório.")
-    }else if(input.id === "msgtxt"){
-      errorInput(msgtxt, "Escreva a mensagem.")
-    }
-  }else{
-    const formItem = input.parentElement;
-    formItem.className = "form-content"
-  }
-}
-
-
-
-function checkForm(){
-  checkInput(email);
-  checkInput(username);
-  checkInput(msgtxt);
-
-  const formItems = form.querySelectorAll(".form-content")
-
-  const isValid = [...formItems].every( (item) => {
-    return item.className === "form-content"
+  menuContato.addEventListener("click", function () {
+    modal.showModal();
   });
 
-  if(isValid){
-    if(msgEnviada){
-      alert("Você já enviou uma mensagem!")
-    }else{
-    alert("Mensagem enviada com sucesso!")
-    msgEnviada = true;
-    }
-    form.reset();
+  abrirModalBtn.addEventListener("click", function () {
+    modal.showModal();
+  });
+
+  closeModalBtn.addEventListener("click", function () {
     closeModal();
+  });
+
+  modal.addEventListener("click", (event) => {
+    if (event.target === event.currentTarget) {
+      closeModal();
+    }
+  });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    checkForm();
+  });
+
+  email.addEventListener("blur", () => {
+    checkInput(email);
+  });
+
+  username.addEventListener("blur", () => {
+    checkInput(username);
+  });
+
+  msgtxt.addEventListener("blur", () => {
+    checkInput(msgtxt);
+  });
+
+  function checkInput(input) {
+    if (input.value === "" || input.value === null) {
+      if (input.id === "username") {
+        errorInput(input, "Preencha o campo de nome!");
+      } else if (input.id === "email") {
+        errorInput(email, "O email é obrigatório.");
+      } else if (input.id === "msgtxt") {
+        errorInput(msgtxt, "Escreva a mensagem.");
+      }
+    } else {
+      const formItem = input.parentElement;
+      formItem.className = "form-content";
+    }
   }
 
-}
+  function checkForm() {
+    checkInput(email);
+    checkInput(username);
+    checkInput(msgtxt);
 
+    const formItems = form.querySelectorAll(".form-content");
 
-function errorInput(input, message){
-  const formItem = input.parentElement;
-  const textMessage = formItem.querySelector("a")
+    const isValid = [...formItems].every((item) => {
+      return item.className === "form-content";
+    });
 
-  textMessage.innerText = message;
+    if (isValid) {
+      if (msgEnviada) {
+        alert("Você já enviou uma mensagem!");
+      } else {
+        alert("Mensagem enviada com sucesso!");
+        msgEnviada = true;
+      }
+      form.reset();
+      closeModal();
+    }
+  }
 
-  formItem.className = "form-content error"
+  function errorInput(input, message) {
+    const formItem = input.parentElement;
+    const textMessage = formItem.querySelector("a");
 
-}
+    textMessage.innerText = message;
 
+    formItem.className = "form-content error";
+  }
 });
-
 
