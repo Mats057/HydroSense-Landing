@@ -31,7 +31,11 @@
     </header>
 
     <header id="mobile-header" class="closed">
-      <img id="mobile-header-icon" src="./images/burger-menu.svg" alt="Abrir/Fechar Menu"/>
+      <img
+        id="mobile-header-icon"
+        src="./images/burger-menu.svg"
+        alt="Abrir/Fechar Menu"
+      />
       <nav>
         <ul>
           <li><a class="option" href="#problema">Problema</a></li>
@@ -176,53 +180,9 @@
       </div>
     </section>
 
-
-    <!-- ---          CONTATO               ---- -->
-
-    <div class="container">
-      <section  id="contato" class="header">
-        <h2>Enviar Email</h2>
-      </section>
-  
-      <form id="form" class="form">
-        <div class="form-content">
-          <label for="username">Nome</label>
-          <input
-            type="text"
-            id="username"
-            placeholder="Digite o seu nome..."
-          />
-          <a>Aqui vai a mensagem de erro....</a>
-        </div>
-  
-        <div class="form-content">
-          <label for="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            placeholder="Digite o seu email..."
-          />
-          <a>Aqui vai a mensagem de erro....</a>
-        </div>
-  
-        <div class="form-content">
-          <label for="msgtxt">Mensagem</label>
-          <input
-            type="text"
-            id="msgtxt"
-            placeholder="Digite sua Mensagem..."
-          />
-          <a>Aqui vai a mensagem de erro....</a>
-        </div>
-  
-  
-        <button type="submit">Enviar</button>
-  
-      </form>
-  
+    <div id="abrirModal">
+      <img src="./images/support.svg" alt="Contact Button" />
     </div>
-      
-
 
     <!--            FOOTER            -->
 
@@ -236,6 +196,55 @@
       </p>
     </div>
 
+    <!-- ---          CONTATO               ---- -->
+    <dialog id="contato">
+      <div class="contato-container">
+        <section class="contato-header">
+          <button id="fecharModal">X</button>
+          <h2>Enviar Email</h2>
+          <span></span>
+        </section>
+        <section class="contato-body">
+          <form id="form" class="form">
+            <div class="form-content">
+              <label for="username">Nome</label>
+              <input
+                type="text"
+                id="username"
+                placeholder="Digite o seu nome..."
+                maxlength="50"
+              />
+              <a>Aqui vai a mensagem de erro....</a>
+            </div>
+
+            <div class="form-content">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Digite o seu email..."
+                maxlength="50"
+              />
+              <a>Aqui vai a mensagem de erro....</a>
+            </div>
+
+            <div class="form-content">
+              <label for="msgtxt">Mensagem</label>
+              <textarea
+                id="msgtxt"
+                placeholder="Digite sua Mensagem..."
+                rows="4"
+                maxrows="4"
+                maxlength="500"
+              ></textarea>
+              <a>Aqui vai a mensagem de erro....</a>
+            </div>
+
+            <button type="submit">Enviar</button>
+          </form>
+        </section>
+      </div>
+    </dialog>
     <script src="script.js"></script>
   </body>
 </html>

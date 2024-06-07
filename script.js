@@ -72,16 +72,43 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   updateCarousel();
-});
 
 
-///-------CONTATO
-
+  //-------CONTATO-MODAL-------//
+const modal = document.getElementById("contato");
+const abrirModalBtn = document.getElementById("abrirModal");
+const closeModalBtn = document.getElementById("fecharModal");
 const form = document.getElementById("form");
 const username = document.getElementById("username")
 const email = document.getElementById("email")
 const msgtxt = document.getElementById("msgtxt")
+let msgEnviada = false;
+const closeModal = () => {
+  modal.setAttribute("closing", "");
+  modal.addEventListener(
+    "animationend",
+    () => {
+      modal.removeAttribute("closing");
+      modal.close();
+    },
+    { once: true }
+  );
+}
 
+abrirModalBtn.addEventListener("click", function () {
+  modal.showModal();
+});
+
+closeModalBtn.addEventListener("click", function () {
+  closeModal();
+});
+
+
+modal.addEventListener("click", (event) => {
+  if (event.target === event.currentTarget) {
+    closeModal();
+  }
+});
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -90,61 +117,39 @@ form.addEventListener("submit", (event) => {
 })
 
 email.addEventListener("blur", () => {
-  checkInputEmail();
+  checkInput(email);
 })
 
-
 username.addEventListener("blur", () => {
-  checkInputUsername();
+  checkInput(username);
 })
 
 msgtxt.addEventListener("blur", () => {
-  checkInputmsgtxt();
+  checkInput(msgtxt);
 })
 
-function checkInputUsername(){
-  const usernameValue = username.value;
 
-  if(usernameValue === ""){
-    errorInput(username, "Preencha o campo de nome!")
+function checkInput(input){
+  if(input.value === "" || input.value === null){
+    if(input.id === "username"){
+      errorInput(input, "Preencha o campo de nome!")
+    }else if(input.id === "email"){
+      errorInput(email, "O email é obrigatório.")
+    }else if(input.id === "msgtxt"){
+      errorInput(msgtxt, "Escreva a mensagem.")
+    }
   }else{
-    const formItem = username.parentElement;
+    const formItem = input.parentElement;
     formItem.className = "form-content"
   }
-
 }
 
-function checkInputEmail(){
-  const emailValue = email.value;
-
-  if(emailValue === ""){
-    errorInput(email, "O email é obrigatório.")
-  }else{
-    const formItem = email.parentElement;
-    formItem.className = "form-content"
-  }
-
-
-}
-
-function checkInputmsgtxt(){
-  const msgtxtValue = msgtxt.value;
-
-  if(msgtxtValue === ""){
-    errorInput(msgtxt, "Escreva a mensagem.")
-  }else{
-    const formItem = msgtxt.parentElement;
-    formItem.className = "form-content"
-  }
-
-
-}
 
 
 function checkForm(){
-  checkInputUsername();
-  checkInputEmail();
-  checkInputmsgtxt();
+  checkInput(email);
+  checkInput(username);
+  checkInput(msgtxt);
 
   const formItems = form.querySelectorAll(".form-content")
 
@@ -153,7 +158,14 @@ function checkForm(){
   });
 
   if(isValid){
-    alert("EMAIL ENVIADO COM SUCESSO!")
+    if(msgEnviada){
+      alert("Você já enviou uma mensagem!")
+    }else{
+    alert("Mensagem enviada com sucesso!")
+    msgEnviada = true;
+    }
+    form.reset();
+    closeModal();
   }
 
 }
@@ -168,3 +180,7 @@ function errorInput(input, message){
   formItem.className = "form-content error"
 
 }
+
+});
+
+
