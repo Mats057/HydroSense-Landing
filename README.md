@@ -10,3 +10,29 @@
 
 ### [HydroSense](https://github.com/Mats057/HydroSense)
 ### [HydroSense-graph](https://github.com/Mats057/HydroSense-graph)
+
+## Itens de Web Development
+
+### Alertas
+
+- Clique no ícone do header
+- Preenchimento do formulário
+
+### Efeitos Diversos
+
+- Efeito de hover e animações no CSS
+- Efeito de scroll nas sections, e outros...
+
+### Validação
+
+- Validação do formulário de contato
+
+### Carrosel
+
+- Carrosel na primeira imagem do site
+
+### Manipulação de DOM
+
+- Modal e avisos de preenchimento
+- Animação do conteúdo no primeiro scroll da página
+
