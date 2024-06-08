@@ -76,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //-------CONTATO-MODAL-------//
   const modal = document.getElementById("contato");
   const menuContato = document.getElementById("menuContato");
+  const mobileMenuContato = document.getElementById("mobileMenuContato");
   const abrirModalBtn = document.getElementById("abrirModal");
   const closeModalBtn = document.getElementById("fecharModal");
   const form = document.getElementById("form");
@@ -102,6 +103,10 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   menuContato.addEventListener("click", function () {
+    modal.showModal();
+  });
+
+  mobileMenuContato.addEventListener("click", function () {
     modal.showModal();
   });
 
